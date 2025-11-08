@@ -53,3 +53,13 @@ def run_etl():
 
 if __name__ == "__main__":
     run_etl()
+
+from etl_logger import log_event
+
+try:
+    log_event("ETL", "Starting pipeline", "RUNNING")
+    # existing ETL steps ...
+    log_event("ETL", "Pipeline completed successfully", "SUCCESS")
+except Exception as e:
+    log_event("ETL", f"Pipeline failed: {e}", "FAILED")
+

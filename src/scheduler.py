@@ -11,3 +11,6 @@ def scheduled_etl():
 print("🕒 Scheduler started — ETL will run every 1 minute (for testing).")
 scheduler.start()
 
+from notification_utils import send_email_alert
+send_email_alert("ETL Success", "ETL ran successfully.", "you@example.com")
+
